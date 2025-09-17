@@ -7,9 +7,9 @@ print(find_packages())
 setup(
     name="taxipred",
     version="0.0.1",
-    description="this package contains taxipred app",
-    author="Kokchun Giang",
-    author_email="author@mail.se",
+    description="This package contains Jonathans taxipred app",
+    author="Jonathan Hansson",
+    author_email="jonathanhanssondg@gmail.com",
     install_requires=["streamlit", "pandas", "fastapi", "uvicorn"],
     package_dir={"": "src"},
     package_data={"taxipred": ["data/*.csv"]},
