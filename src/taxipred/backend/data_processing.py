@@ -8,6 +8,8 @@ class TaxiData:
         self.df = pd.read_csv(TAXI_CSV_PATH)
 
     def preprocess_data(self):
+        self.df = self.df.dropna()
+
         categorical_cols = [
             'Traffic_Conditions', 
             'Weather', 
@@ -17,7 +19,8 @@ class TaxiData:
 
         self.df = pd.get_dummies(self.df, columns=categorical_cols)
 
-        return self.df.dropna()
+        # in the EDA I got the lowest MAE/MSE and highest R2 while dropping all the NaN columns 
+        return self.df
     
     def get_features_and_target(self, target='Trip_Price'):
         df_processed = self.preprocess_data()
@@ -27,3 +30,5 @@ class TaxiData:
 
     def to_json(self):
         return json.loads(self.df.to_json(orient = "records"))
+
+
