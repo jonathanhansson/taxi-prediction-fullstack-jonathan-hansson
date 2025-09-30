@@ -7,7 +7,7 @@ import sys
 taxi_data = TaxiData()
 
 # I call for the method in data_processing.py
-# It is important to call for 'preprocess_data' first, though, since the second method calls for it
+# It is important to not call for 'preprocess_data' first, though, since "get_features_and_target()" calls for it
 X, y = taxi_data.get_features_and_target()
 
 # I chose gradient boosting regression because it provided the best evaluation scores
