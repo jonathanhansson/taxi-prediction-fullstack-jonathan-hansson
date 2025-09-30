@@ -6,7 +6,7 @@ import json
 class TaxiData:
     def __init__(self):
         self.df = pd.read_csv(TAXI_CSV_PATH)
-
+    
     def preprocess_data(self):
         self.df = self.df.dropna()
 
