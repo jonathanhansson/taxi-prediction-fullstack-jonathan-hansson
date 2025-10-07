@@ -16,7 +16,7 @@ class TaxiFeatures(BaseModel):
 
 @app.get("/all-taxi-rides")
 async def read_taxi_data():
-    return taxi_data.to_json()
+    return taxi_data.convert_to_python_object()
 
 """
 Because we will be receving features (data) from the
