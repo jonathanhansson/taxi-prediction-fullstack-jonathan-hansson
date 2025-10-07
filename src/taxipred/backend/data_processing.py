@@ -28,7 +28,9 @@ class TaxiData:
         
         return X, y
 
-    def to_json(self):
+    # This was previously called "to_json()" but since it returns a 
+    # Python object (list of dictionaries), we call it that
+    def convert_to_python_object(self):
         return json.loads(self.df.to_json(orient = "records"))
 
 
